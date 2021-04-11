@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
 <style>
 body {
     display:flex;
@@ -26,23 +25,20 @@ body {
 	padding: 0px;
 }
 </style>
-https://api.thingspeak.com/channels/1353418/fields/1/last.json
-<script type="text/javascript">
-$(document).ready(function(){
-	$.ajax({
-		url: 'https://api.thingspeak.com/channels/1353418/fields/1/last.json',
-		type: 'GET',
-		dataType: 'JSON',
-		success: function(response) {
-		
-        $("#myData").append('<p>' + response.created_at + ' : ' + response.field1');
-		}
-	});
-}
+<head>
+<script type="text/javascript" src="jquery-3.1.0.min.js">
+
+	$(document).ready(function(){
+                $.getJSON("https://api.thingspeak.com/channels/1353418/fields/1/last.json", null, function (data) {document.getElementById("myData").innerHTML = data[0].field1})
+            }.fail(function() {
+        alert("no response from:  http://finance.yahoo.com/webservice/v1/symbols/%5EIXIC/quote?format=json&view=detail")
+      });
+			
 </script>
+</head>
 <body>
 <div class="main">
-<div class="center" id="myData"><p>APUAA</div>
+<div class="center"><p id="myData">APUAA</p></div>
 <div class="center"><iframe width="1024" height="400" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1353418/charts/1?bgcolor=%23ffffff&color=%23d62020&days=1&dynamic=true&results=60&title=Temperature&type=line&yaxismax=40&yaxismin=0&width=1024&height=400"></iframe></div>
 <div class="center"><iframe width="1024" height="400" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1353418/charts/2?bgcolor=%23ffffff&color=%23d62020&days=1&dynamic=true&results=60&title=Humidity&type=line&yaxismax=100&yaxismin=0&width=1024&height=400"></iframe></div>
 </div>
