@@ -13,17 +13,32 @@ body {
 }
 .main {
     text-align: center;
-	width: 100vw;
+	
 	margin : auto;
 	align-items: center;
-	padding: 0px;
+	padding: 0px;	
 }
 .center {
     text-align: center;
 	margin : auto;
 	align-items: center;
-	padding: 0px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #473F51;
 }
+.last {
+    display:flex;
+	flex-direction: row;
+	justify-content:center;
+    text-align: center;
+	margin : 5px;
+	align-items: center;
+	padding: 0px;
+	background-color: #473F51;
+	border-radius: 10px;
+}
+
+
 </style>
 <head>
 
@@ -57,8 +72,7 @@ body {
 })();
 </script>
 <div class="main">
-<div  id="temp"></div>
-<div  id="humi"></div>
+<div class="last"><div  id="temp"></div><div  id="humi"></div></div>
 <div class="center"><iframe width="1024" height="400" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1353418/charts/1?bgcolor=%23ffffff&color=%23d62020&days=1&dynamic=true&results=60&title=Temperature&type=line&yaxismax=40&yaxismin=0&width=1024&height=400"></iframe></div>
 <div class="center"><iframe width="1024" height="400" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1353418/charts/2?bgcolor=%23ffffff&color=%23d62020&days=1&dynamic=true&results=60&title=Humidity&type=line&yaxismax=100&yaxismin=0&width=1024&height=400"></iframe></div>
 </div>
