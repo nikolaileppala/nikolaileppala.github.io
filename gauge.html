@@ -43,10 +43,10 @@
 
     // get the data from thingspeak
 	
-	$.getJSON( "https://api.thingspeak.com/channels/1353418/feeds/last.json",  function(data) {
+	//$.getJSON( "https://api.thingspeak.com/channels/1353418/feeds/last.json",  function(data) {
     //format: "json"
 	
-    //$.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json, function(data) {
+    $.getJSON("https://api.thingspeak.com/channels/" + channel_id + "/feed/last.json", function(data) {
 
       // get the data point
       p = data.field1;
